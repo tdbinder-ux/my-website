@@ -1,0 +1,44 @@
+/* 1. Type selector */
+body {
+    font-family: Arial, sans-serif;   /* font property #1 */
+    line-height: 1.6;                 /* relative unit */
+    background-color: #f5f5f5;        /* hex color */
+    margin: 2rem;                     /* relative unit */
+}
+
+/* 2. Class selector */
+.highlight {
+    color: rgb(180, 60, 20);          /* RGB color */
+    font-weight: bold;                /* font property #2 */
+}
+
+/* 3. Relational selector (descendant selector) */
+main p {
+    max-width: 60ch;                  /* relative unit */
+    color: #333333;                   /* hex color */
+}
+
+/* 4. Combination selector (type + class) */
+h2.highlight {
+    font-size: 2rem;                  /* relative unit */
+}
+
+/* 5. Pseudo-class selector */
+a:hover {
+    color: rgb(120, 20, 20);          /* RGB color */
+    text-decoration: underline;
+}
+
+/* Extra styling for layout */
+img {
+    width: 100%;                      /* relative unit */
+    max-width: 30rem;                 /* relative unit */
+    border-radius: 0.5rem;            /* relative unit */
+    display: block;
+    margin-top: 1rem;
+}
+
+footer p {
+    font-size: 0.9rem;                /* relative unit */
+    color: #555555;                   /* hex color */
+}
