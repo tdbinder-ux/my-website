@@ -23,9 +23,16 @@ h2.highlight {
     font-size: 2rem;                  /* relative unit */
 }
 
+/* 5. Change link color */
+a {
+    color: #e8fdfd;   /* pale turquoise */
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* 5. Pseudo-class selector */
 a:hover {
-    color: rgb(120, 20, 20);          /* RGB color */
+    color: rgb(244, 134, 134);          /* RGB color - Soft Ember Glow*/
     text-decoration: underline;
 }
 
@@ -36,9 +43,82 @@ img {
     border-radius: 0.5rem;            /* relative unit */
     display: block;
     margin-top: 1rem;
+    border: 3px solid #2f6f54;   /* green border */
 }
 
 footer p {
     font-size: 0.9rem;                /* relative unit */
     color: #555555;                   /* hex color */
+}
+.two-column {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+/* === HEADER GRADIENT BAND === */
+header {
+    background: linear-gradient(
+        to right,
+        #004f4f,   /* dark turquoise */
+        #2f6f54,   /* green */
+        #7a4e2b,   /* brown */
+        #2f6f54,   /* green */
+        #004f4f    /* dark turquoise */
+    );
+    padding: 20px 10px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+
+/* Flex layout for logo + title */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Logo styling with subtle ember glow */
+.logo {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(178, 34, 34, 0.5)); /* ember red glow */
+}
+
+/* Title styling */
+.site-title {
+    font-family: "Georgia", serif;
+    font-size: 2rem;
+    margin: 0;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .logo {
+        width: 60px;
+    }
+    .site-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .logo {
+        width: 50px;
+    }
+    .site-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
 }
