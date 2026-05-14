@@ -59,11 +59,11 @@ footer p {
 header {
     background: linear-gradient(
         to right,
-        #004f4f,   /* dark turquoise */
-        #2f6f54,   /* green */
-        #7a4e2b,   /* brown */
-        #2f6f54,   /* green */
-        #004f4f    /* dark turquoise */
+        #006b7a,   /* dark turquoise */
+        #3f6b3a,   /* green */
+        #90510e,   /* brown */
+        #3f6b3a,   /* green */
+        #006b7a    /* dark turquoise */
     );
     padding: 20px 10px;
     color: #f0f0f0;
