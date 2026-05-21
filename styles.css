@@ -1,4 +1,4 @@
-/* 1. Type selector */
+/* Global Page Styling */
 body {
     font-family: Arial, sans-serif;   /* font property #1 */
     line-height: 1.6;                 /* relative unit */
@@ -6,13 +6,13 @@ body {
     margin: 2rem;                     /* relative unit */
 }
 
-/* 2. Class selector */
+/* Highlight class for emphasis */
 .highlight {
     color: rgb(180, 60, 20);          /* RGB color */
     font-weight: bold;                /* font property #2 */
 }
 
-/* 3. Relational selector (descendant selector) */
+/* Paragraph styling inside main content */
 main p {
     max-width: 60ch;                  /* relative unit */
     color: #333333;                   /* hex color */
@@ -23,22 +23,32 @@ h2.highlight {
     font-size: 2rem;                  /* relative unit */
 }
 
-/* 5. Change link color */
-a {
-    color: #e8fdfd;   /* pale turquoise */
+/* === NAVIGATION MENU === */
+/* Ensures nav is horizontal by default */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;   /* Spacing between links */
+}
+
+nav a {
+    color: #e8fdfd;   /* Pale turquoise */
     text-decoration: none;
     font-weight: bold;
 }
 
-/* 5. Pseudo-class selector */
-a:hover {
-    color: rgb(244, 134, 134);          /* RGB color - Soft Ember Glow*/
+nav a:hover {
+    color: rgb(244, 134, 134); /* Soft Ember Glow */
     text-decoration: underline;
 }
 
-/* Extra styling for layout */
+/* Scalable Images */
 img {
     width: 100%;                      /* relative unit */
+    height: auto;             /* Maintain proportions */
     max-width: 30rem;                 /* relative unit */
     border-radius: 0.5rem;            /* relative unit */
     display: block;
@@ -46,15 +56,26 @@ img {
     border: 3px solid #2f6f54;   /* green border */
 }
 
+/* FOOTER */
 footer p {
     font-size: 0.9rem;                /* relative unit */
     color: #555555;                   /* hex color */
 }
+
+/* TWO-COLUMN FLUID LAYOUT */
+/* Replaces fixed grid with flexible layout */
 .two-column {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-wrap: wrap;            /* Allows stacking on small screens */
     gap: 2rem;
 }
+
+/* Sections and asides flex naturally */
+.two-column section,
+.two-column aside {
+    flex: 1 1 300px;            /* Grow, shrink, min width */
+}
+
 /* === HEADER GRADIENT BAND === */
 header {
     background: linear-gradient(
@@ -98,18 +119,21 @@ header {
 
 /* === RESPONSIVE BREAKPOINTS === */
 
-/* Tablets */
-@media (max-width: 768px) {
-    .logo {
-        width: 60px;
-    }
-    .site-title {
-        font-size: 1.6rem;
+/*  Tablet Layout Fix (max-width: 900:px)  */
+/*  Converts nav to vertical for better spacing  */
+@media (max-width: 900px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
-/* Phones */
-@media (max-width: 480px) {
+/*  Mobile Layout Fix (max-width: 600px)  */
+/*  Stacks columns and adjusts header layout  */
+@media (max-width: 600px) {
+    .two-column {
+        flex-direction: column;   /* Single column on phones */
+    }
     .header-content {
         flex-direction: column;
         gap: 8px;
