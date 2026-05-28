@@ -117,7 +117,165 @@ header {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
+/* === GLOSSARY PAGE LAYOUT === */
+
+.glossary-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .glossary-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === SIDEBAR === */
+
+.glossary-sidebar {
+  border-right: 3px solid #3f6b3a;
+  padding-right: 1rem;
+}
+
+.glossary-sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2f6f54;
+}
+
+.glossary-sidebar label {
+  display: block;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.glossary-sidebar label:hover {
+  color: #006b7a;
+}
+
+/* Hide the radio buttons */
+.glossary-sidebar input[type="radio"] {
+  display: none;
+}
+
+/* === GLOSSARY GRID === */
+
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.term img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #2f6f54;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* === CATEGORY FILTERING === */
+
+/* Default: show all */
+#filter-all:checked ~ .glossary .term {
+  display: block;
+}
+
+/* Structures only */
+#filter-structures:checked ~ .glossary .term {
+  display: none;
+}
+#filter-structures:checked ~ .glossary .term.structure {
+  display: block;
+}
+
+/* Concepts only */
+#filter-concepts:checked ~ .glossary .term {
+  display: none;
+}
+#filter-concepts:checked ~ .glossary .term.concept {
+  display: block;
+}
+
 /* === RESPONSIVE BREAKPOINTS === */
+
+/* ================================
+    Glossary Breakpoint 1: Tablets
+    Sidebar narrows, grid adjusts
+   ================================ */
+@media (max-width: 900px) {
+  .glossary-layout {
+    gap: 20px;
+  }
+
+  .glossary-sidebar {
+    width: 220px;
+  }
+
+  .glossary {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* ==========================================
+    Glossary Breakpoint 2: Small screens
+    Sidebar stacks above grid
+   ========================================== */
+@media (max-width: 700px) {
+  .glossary-layout {
+    flex-direction: column; /* Switch from grid to stacked flex */
+  }
+
+  .glossary-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    border-right: none;
+    border-bottom: 3px solid #3f6b3a;
+    padding-bottom: 1rem;
+  }
+
+  .glossary {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+/* ==========================================
+    Glossary Breakpoint 3: Extra-small screens
+    Single column, images scale down
+   ========================================== */
+@media (max-width: 480px) {
+  .glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .glossary img {
+    width: 100%;
+    height: auto;
+  }
+
+  .term {
+    padding: 10px;
+  }
+
+  .glossary-sidebar h3 {
+    font-size: 1.1rem;
+  }
+}
 
 /*  Tablet Layout Fix (max-width: 900:px)  */
 /*  Converts nav to vertical for better spacing  */
