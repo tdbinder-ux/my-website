@@ -1,120 +1,158 @@
+/* CSS Reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Global Page Styling */
 body {
-    font-family: Arial, sans-serif;   /* font property #1 */
-    line-height: 1.6;                 /* relative unit */
-    background-color: #f5f5f5;        /* hex color */
-    margin: 2rem;                     /* relative unit */
+  font-family: Arial, sans-serif;
+  /* font property #1 */
+  line-height: 1.6;
+  /* relative unit */
+  background-color: #f5f5f5;
+  /* hex color */
+  margin: 2rem;
+  /* relative unit */
 }
 
 /* Highlight class for emphasis */
 .highlight {
-    color: rgb(180, 60, 20);          /* RGB color */
-    font-weight: bold;                /* font property #2 */
+  color: rgb(180, 60, 20);
+  /* RGB color */
+  font-weight: bold;
+  /* font property #2 */
 }
 
 /* Paragraph styling inside main content */
 main p {
-    max-width: 60ch;                  /* relative unit */
-    color: #333333;                   /* hex color */
+  max-width: 60ch;
+  /* relative unit */
+  color: #333333;
+  /* hex color */
 }
 
 /* 4. Combination selector (type + class) */
 h2.highlight {
-    font-size: 2rem;                  /* relative unit */
+  font-size: 2rem;
+  /* relative unit */
 }
 
 /* === NAVIGATION MENU === */
 /* Ensures nav is horizontal by default */
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;   /* Spacing between links */
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Spacing between links */
 }
 
 nav a {
-    color: #e8fdfd;   /* Pale turquoise */
-    text-decoration: none;
-    font-weight: bold;
+  color: #e8fdfd;
+  /* Pale turquoise */
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav a:hover {
-    color: rgb(244, 134, 134); /* Soft Ember Glow */
-    text-decoration: underline;
+  color: rgb(244, 134, 134);
+  /* Soft Ember Glow */
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: #f48686;
+  text-decoration: underline;
 }
 
 /* Scalable Images */
 img {
-    width: 100%;                      /* relative unit */
-    height: auto;             /* Maintain proportions */
-    max-width: 30rem;                 /* relative unit */
-    border-radius: 0.5rem;            /* relative unit */
-    display: block;
-    margin-top: 1rem;
-    border: 3px solid #2f6f54;   /* green border */
+  width: 100%;
+  /* relative unit */
+  height: auto;
+  /* Maintain proportions */
+  max-width: 30rem;
+  /* relative unit */
+  border-radius: 0.5rem;
+  /* relative unit */
+  display: block;
+  margin-top: 1rem;
+  border: 3px solid #2f6f54;
+  /* green border */
 }
 
 /* FOOTER */
 footer p {
-    font-size: 0.9rem;                /* relative unit */
-    color: #555555;                   /* hex color */
+  font-size: 0.9rem;
+  /* relative unit */
+  color: #555555;
+  /* hex color */
 }
 
 /* TWO-COLUMN FLUID LAYOUT */
 /* Replaces fixed grid with flexible layout */
 .two-column {
-    display: flex;
-    flex-wrap: wrap;            /* Allows stacking on small screens */
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows stacking on small screens */
+  gap: 2rem;
 }
 
 /* Sections and asides flex naturally */
 .two-column section,
 .two-column aside {
-    flex: 1 1 300px;            /* Grow, shrink, min width */
+  flex: 1 1 300px;
+  /* Grow, shrink, min width */
 }
 
 /* === HEADER GRADIENT BAND === */
 header {
-    background: linear-gradient(
-        to right,
-        #006b7a,   /* dark turquoise */
-        #3f6b3a,   /* green */
-        #90510e,   /* brown */
-        #3f6b3a,   /* green */
-        #006b7a    /* dark turquoise */
+  background: linear-gradient(to right,
+      #006b7a,
+      /* dark turquoise */
+      #3f6b3a,
+      /* green */
+      #90510e,
+      /* brown */
+      #3f6b3a,
+      /* green */
+      #006b7a
+      /* dark turquoise */
     );
-    padding: 20px 10px;
-    color: #f0f0f0;
-    text-align: center;
+  padding: 20px 10px;
+  color: #f0f0f0;
+  text-align: center;
 }
 
 
 /* Flex layout for logo + title */
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 /* Logo styling with subtle ember glow */
 .logo {
-    width: 80px;
-    height: auto;
-    flex-shrink: 0;
-    filter: drop-shadow(0 0 6px rgba(178, 34, 34, 0.5)); /* ember red glow */
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(178, 34, 34, 0.5));
+  /* ember red glow */
 }
 
 /* Title styling */
 .site-title {
-    font-family: "Georgia", serif;
-    font-size: 2rem;
-    margin: 0;
-    color: #f0f0f0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  margin: 0;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* === GLOSSARY PAGE LAYOUT === */
@@ -133,7 +171,7 @@ header {
 }
 
 /* Hide radio inputs but keep them as siblings of .glossary */
-.glossary-layout > input[type="radio"] {
+.glossary-layout>input[type="radio"] {
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -193,23 +231,25 @@ figcaption {
 /* === CATEGORY FILTERING === */
 
 /* Default: show all */
-#filter-all:checked ~ .glossary .term {
+#filter-all:checked~.glossary .term {
   display: block;
 }
 
 /* Structures only */
-#filter-structures:checked ~ .glossary .term {
+#filter-structures:checked~.glossary .term {
   display: none;
 }
-#filter-structures:checked ~ .glossary .term.structure {
+
+#filter-structures:checked~.glossary .term.structure {
   display: block;
 }
 
 /* Concepts only */
-#filter-concepts:checked ~ .glossary .term {
+#filter-concepts:checked~.glossary .term {
   display: none;
 }
-#filter-concepts:checked ~ .glossary .term.concept {
+
+#filter-concepts:checked~.glossary .term.concept {
   display: block;
 }
 
@@ -239,7 +279,8 @@ figcaption {
    ========================================== */
 @media (max-width: 700px) {
   .glossary-layout {
-    flex-direction: column; /* Switch from grid to stacked flex */
+    flex-direction: column;
+    /* Switch from grid to stacked flex */
   }
 
   .glossary-sidebar {
@@ -282,30 +323,35 @@ figcaption {
 /*  Tablet Layout Fix (max-width: 900:px)  */
 /*  Converts nav to vertical for better spacing  */
 @media (max-width: 900px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /*  Mobile Layout Fix (max-width: 600px)  */
 /*  Stacks columns and adjusts header layout  */
 @media (max-width: 600px) {
-    .two-column {
-        flex-direction: column;   /* Single column on phones */
-    }
-    .header-content {
-        flex-direction: column;
-        gap: 8px;
-    }
-    .logo {
-        width: 50px;
-    }
-    .site-title {
-        font-size: 1.4rem;
-        text-align: center;
-    }
+  .two-column {
+    flex-direction: column;
+    /* Single column on phones */
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 }
+
 /* ============================
    TABLE STYLES – Planting Schedule Page
    Added for Assignment: Extra Credit Table Requirement
@@ -318,14 +364,16 @@ table {
   font-family: "Lora", serif;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ccc;
   padding: 0.75em;
   text-align: left;
 }
 
 th {
-  background-color: #2f6b3a; /* matches your site’s green */
+  background-color: #2f6b3a;
+  /* matches your site’s green */
   color: #fff;
 }
 
