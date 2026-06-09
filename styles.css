@@ -132,6 +132,13 @@ header {
   }
 }
 
+/* Hide radio inputs but keep them as siblings of .glossary */
+.glossary-layout > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* === SIDEBAR === */
 
 .glossary-sidebar {
@@ -155,11 +162,6 @@ header {
 
 .glossary-sidebar label:hover {
   color: #006b7a;
-}
-
-/* Hide the radio buttons */
-.glossary-sidebar input[type="radio"] {
-  display: none;
 }
 
 /* === GLOSSARY GRID === */
@@ -303,4 +305,35 @@ figcaption {
         font-size: 1.4rem;
         text-align: center;
     }
+}
+/* ============================
+   TABLE STYLES – Planting Schedule Page
+   Added for Assignment: Extra Credit Table Requirement
+   ============================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5em;
+  font-family: "Lora", serif;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.75em;
+  text-align: left;
+}
+
+th {
+  background-color: #2f6b3a; /* matches your site’s green */
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garden Glossary – Emberroot Haven</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -12,7 +13,7 @@
 <header>
     <div class="header-content">
      <img src="images/tree-of-life-logo.png" alt="Emberroot Haven Logo" class="logo">
-     <h1>Garden Glossary</h1>
+     <h1>Emberroot Haven - Garden Glossary</h1>
      </div>
   <p>A visual guide to the garden structures and concepts used throughout Emberroot Haven.</p>
     <nav>
@@ -20,7 +21,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="first-season.html">First Season</a></li>
             <li><a href="long-term-plan.html">Long-Term Plan</a></li>
-            <li><a href="glossary.html">Glossary</a></li>
+            <li><a href="planting-schedule.html" class="active">Planting Schedule</a></li>
+            <li><a href="glossary.html" class="active">Glossary</a></li>
 
         <!-- External link (opens in new tab) -->
             <li><a href="https://extension.wsu.edu/" target="_blank">WSU Extension</a></li>
@@ -33,25 +35,19 @@
 
 <div class="glossary-layout">
 
+ <!-- Filter inputs MUST be siblings of .glossary -->
+  <input type="radio" name="filter" id="filter-all" checked>
+  <input type="radio" name="filter" id="filter-structures">
+  <input type="radio" name="filter" id="filter-concepts">
+
   <!-- === SIDEBAR FILTER === -->
   <aside class="glossary-sidebar">
 
     <h3>Filter Terms</h3>
 
-    <label>
-      <input type="radio" name="filter" id="filter-all" checked>
-      Show All
-    </label>
-
-    <label>
-      <input type="radio" name="filter" id="filter-structures">
-      Structures
-    </label>
-
-    <label>
-      <input type="radio" name="filter" id="filter-concepts">
-      Garden Concepts
-    </label>
+    <label for="filter-all">Show All</label>
+    <label for="filter-structures">Structures</label>
+    <label for="filter-concepts">Garden Concepts</label>
 
   </aside>
 
